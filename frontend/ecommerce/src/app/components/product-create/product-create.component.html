@@ -1,0 +1,91 @@
+<div class="row">
+    <div class="col-md-2"></div> 
+    <div class="col-md-8">
+        <div class="submit-form">
+            <div *ngIf="!submitted">
+              <div class="form-group">
+                <label for="name">Product Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  required
+                  [(ngModel)]="product.name"
+                  name="name"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="name">Select product category</label>
+                <select class="form-control" [(ngModel)]="product.categories_id">
+                    <option value="" selected>Select Product</option>
+                    <option value="1">Appliances</option>
+                    <option value="2">Apps & Games</option>
+                    <option value="3">Arts, Crafts, & Sewing</option>
+                    <option value="4">Automotive Parts & Accessories</option>
+                    <option value="5">Baby</option>
+                    <option value="6">Beauty & Personal Care</option>
+                    <option value="7">Books</option>
+                    <option value="8">Computers</option>
+                    <option value="9">Electronics</option>
+                    <option value="10">Garden & Outdoor</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="name">Product Title</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="title"
+                  required
+                  [(ngModel)]="product.title"
+                  name="title"
+                />
+              </div>
+        
+              <div class="form-group">
+                <label for="description">Description</label>
+                <input
+                type="text"
+                  class="form-control"
+                  id="description"
+                  required
+                  [(ngModel)]="product.description"
+                  name="description"
+                />
+              </div>
+              <div class="form-group">
+                <label for="price">Price</label>
+                <input
+                type="number"
+                  class="form-control"
+                  id="price"
+                  required
+                  [(ngModel)]="product.price"
+                  name="price"
+                />
+              </div>
+              <div class="form-group">
+                <label for="quantity">Quantity</label>
+                <input
+                type="number"
+                  class="form-control"
+                  id="quantity"
+                  required
+                  [(ngModel)]="product.quantity"
+                  name="quantity"
+                />
+              </div>
+              <br>
+              <button (click)="createProduct()" class="btn btn-success">Create New Product</button>
+            </div>
+        
+            <div *ngIf="submitted">
+              <h3>You successfully created a product!</h3>
+              <button class="btn btn-success" (click)="newProduct()">Add another product</button>
+            </div>
+          </div>
+    </div> 
+    <div class="col-md-2"></div>
+  </div>
