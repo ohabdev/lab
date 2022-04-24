@@ -40,7 +40,7 @@ Products.findById = (id, result) => {
 };
 
 Products.getAll = (id, result) => {
-  let query = "SELECT * FROM products ORDER BY id DESC";
+  let query = "SELECT *, products.id as pro_id FROM products, categories WHERE products.categories_id = categories.id ORDER BY pro_id DESC";
   sql.query(query, (err, res) => {
     if (err) {
       console.log("error: ", err);
